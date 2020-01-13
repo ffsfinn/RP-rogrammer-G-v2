@@ -1,7 +1,7 @@
 import React from 'react'
 import Squares from '../Squares/Squares'
 
-const Board = (props) => (
+const Board = props => (
     <div className='Board'>
         
         <Squares />

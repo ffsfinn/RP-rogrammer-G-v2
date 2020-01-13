@@ -1,33 +1,15 @@
 import React from 'react';
+import Square from '../Square/Square'
 
-const Squares = (props) => (
+const Squares = props => (
 
 <div class="square-container">
 
-  <div class="square">
-    <div class="content">
-    </div>
-  </div>
-
-  <div class="square">
-    <div class="content spread">
-    </div>
-  </div>
-
-  <div class="square">
-    <div class="content column">
-    </div>
-  </div>
-
-  <div class="square">
-    <div class="content spread">
-    </div>
-  </div>
-
-  <div class="square">
-    <div class="content column">
-    </div>
-  </div>
+  <Square />
+  <Square />
+  <Square />
+  <Square />
+  <Square />
 
 </div>
 )
