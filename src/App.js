@@ -1,8 +1,13 @@
 import React, {Component} from 'react';
-import Board from './component/Board/Board'
-import TextBox from './component/TextBox/TextBox'
+import Board from './component/Board/Board';
+import TextBox from './component/TextBox/TextBox';
+import NavBar from './component/NavBar/NavBar';
 import './App.css';
-import './component/Board/Board.css'
+import { Route, Switch, Redirect} from 'react-router-dom';
+import SignupPage from '../src/component/pages/SignupPage/SignupPage';
+import LoginPage from '../src/component/pages/LoginPage/LoginPage';
+import userService from '../src/component/utils/userService';
+import './component/Board/Board.css';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
@@ -12,20 +17,35 @@ import Box from '@material-ui/core/Box';
 
 export default class App extends Component {
 
-  render() {
+  constructor() {
+    super();
+    this.state = {
+      user: userService.getUser()
+    };
+  }
+
+render() {
     return(
       
-      <VerticalTabs>
+      <>
+      <NavBar />
+        <Switch>
+          <Route exact path='/SignupForm' render={() => (
+            <SignupPage />
+          )}/>
+
+        <VerticalTabs>
         <div className='main'>
           <div className='textmain'>
-            <TextBox />
+              <TextBox />
+                </div>
+              <div className='boardmain'>
+              <Board />
+            </div>
           </div>
-          <div className='boardmain'>
-            <Board />
-          </div>
-        </div>
-      </VerticalTabs>   
-
+        </VerticalTabs>
+      </Switch>
+    </>
     )
   }
 

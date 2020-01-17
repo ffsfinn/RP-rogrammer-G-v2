@@ -1,4 +1,5 @@
 import React from 'react'
+import NavBar from '../NavBar/NavBar'
 import styles from './TextBox.module.css'
 
 const TextBox = props => (
