@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Board from './component/Board/Board'
-// import NavBoard from './component/NavBoard/NavBoard'
+import TextBox from './component/TextBox/TextBox'
 import './App.css';
 import './component/Board/Board.css'
 import PropTypes from 'prop-types';
@@ -14,13 +14,18 @@ export default class App extends Component {
 
   render() {
     return(
-      <div>
-
-     <VerticalTabs>
-        {/* <NavBoard /> */}
-        <Board />
+      
+      <VerticalTabs>
+        <div className='main'>
+          <div className='textmain'>
+            <TextBox />
+          </div>
+          <div className='boardmain'>
+            <Board />
+          </div>
+        </div>
       </VerticalTabs>   
-      </div>
+
     )
   }
 
@@ -30,6 +35,7 @@ function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
   return (
+  
     <Typography
       component="div"
       role="tabpanel"
@@ -79,7 +85,7 @@ function VerticalTabs({ children }) {
   return (
     <>
     {children}
-
+<div className='one'>
     <div className={classes.root}>
       <Tabs
         orientation="vertical"
@@ -103,6 +109,7 @@ function VerticalTabs({ children }) {
         Shop Keeper
       </TabPanel>
     </div>
+</div>
     </>
   );
 }

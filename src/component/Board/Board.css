@@ -1,19 +1,20 @@
 .square-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row-reverse;
   }
   
 .square {
     position: relative;
-    flex-basis: calc(5% - 10px);
-    border: 1px solid;
+    flex-basis: calc(22% - 10px);
+    border: 1px solid black;
     box-sizing: border-box;
+    width: 100px;
+    height: 100px;
   }
   
 .square::before {
     content: '';
     display: block;
-    padding-top: 100%;
   }
   
 .square .content {
