@@ -1,22 +1,22 @@
-const User = require('../model/User');
+const User = require('../models/User');
 
-async function create() {
+async function create(req, res) {
     const user = new User(req.body);
 
     try {
         await user.save()
-        res.status(201).JSON(user);
+        res.status(201).json(user);
     } 
     catch(err) {
-        res.status(400).JSON(err);
+        res.status(400).json(err);
     }
 }
 
 async function index(req, res) {
 
     try {
-      const puppyIndex = await Puppy.find({});
-      res.status(201).json(puppyIndex);
+      const userIndex = await User.find({});
+      res.status(201).json(userIndex);
     } catch (err) {
       res.status(400).json(err);
     }
