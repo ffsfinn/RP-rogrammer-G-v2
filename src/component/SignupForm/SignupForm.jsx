@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import userService from '../utils/userService';
+import userService from '../../utils/userService';
 
 class SignupForm extends Component {
 
@@ -22,9 +22,6 @@ class SignupForm extends Component {
   handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      console.log('This is the name ' + this.state.name)
-      console.log('This is the email ' + this.state.email)
-
       await userService.signup(this.state);
       // Let <App> know a user has signed up!
       this.props.handleSignupOrLogin();

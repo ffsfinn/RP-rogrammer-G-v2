@@ -1,4 +1,4 @@
-const User = require('../models/User');
+const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 const SECRET = process.env.SECRET;
 
@@ -25,7 +25,6 @@ async function login(req, res) {
 }
 
 async function signup(req, res) {
-  console.log('this is req.body');
   const user = new User(req.body);
   try {
     await user.save();

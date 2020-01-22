@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
-import Board from './component/Board/Board';
-import TextBox from './component/TextBox/TextBox';
-import GamePage from './component/GamePage/GamePage'
+import Board from '../../component/Board/Board';
+import TextBox from '../../component/TextBox/TextBox';
+import GamePage from '../../component/GamePage/GamePage'
 import './App.css';
 import { Route, Switch } from 'react-router-dom';
-import SignupPage from '../src/component/pages/SignupPage/SignupPage';
-import LoginPage from '../src/component/pages/LoginPage/LoginPage';
-import userService from '../src/component/utils/userService';
-import './component/Board/Board.css';
+import SignupPage from '../../pages/SignupPage/SignupPage';
+import LoginPage from '../../pages/LoginPage/LoginPage';
+import userService from '../../utils/userService';
+import '../../component/Board/Board.css';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
