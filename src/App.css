@@ -2,6 +2,11 @@ html {
     padding: 10px;
 }
 
+.playerNav {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
 .main {
     background-color: white;
     display: flex;

@@ -8,7 +8,7 @@ const app = express();
 require("dotenv").config();
 require("./config/database");
 
-var userRouter = require('./routes/Users')
+var userRouter = require('./routes/users')
 
 app.use(logger("dev"));
 app.use(express.json());
@@ -21,7 +21,8 @@ app.use(express.static(path.join(__dirname, "build")));
 
 // Put API routes here, before the "catch all" route
 //route to create puppy
-app.use("/api", userRouter);
+app.use("/users", userRouter);
+app.use(require('./config/auth'));
 
 // The following "catch all" route (note the *)is necessary
 // for a SPA's client-side routing to properly work
