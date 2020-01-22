@@ -1,4 +1,4 @@
-const User = require('../models/user');
+const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const SECRET = process.env.SECRET;
 
@@ -10,6 +10,7 @@ module.exports = {
 async function login(req, res) {
   try {
     const user = await User.findOne({email: req.body.email});
+    console.log(user, "this is my login user")
     if (!user) return res.status(401).json({err: 'bad credentials'});
     user.comparePassword(req.body.pw, (err, isMatch) => {
       if (isMatch) {

@@ -41,7 +41,7 @@ render() {
           handleLogout={this.handleLogout}
           />
       <Switch>
-        <Route exact path='/signupForm' render={({ history }) => (
+        <Route exact path='/signup' render={({ history }) => (
           <SignupPage 
             history={history}
             handleSignupOrLogin={this.handleSignupOrLogin}

@@ -10,6 +10,7 @@ const userSchema = new mongoose.Schema({
 {
   timestamps: true
 });
+
 userSchema.set('toJSON', {
   transform: function(doc, ret) {
     // remove the password property when serializing doc to JSON
@@ -17,6 +18,7 @@ userSchema.set('toJSON', {
     return ret;
   }
 });
+
 userSchema.pre('save', function(next) {
   const user = this;
   if (!user.isModified('password')) return next();
@@ -26,7 +28,10 @@ userSchema.pre('save', function(next) {
     return next();
   });
 });
+
 userSchema.methods.comparePassword = function(tryPassword, cb) {
   bcrypt.compare(tryPassword, this.password, cb);
 }
+
+
 module.exports = mongoose.model('User', userSchema);
