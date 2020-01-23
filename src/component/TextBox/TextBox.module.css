@@ -1,8 +1,10 @@
 .TextBox {
     display: grid;
     padding: 20px;
+    background-color: greenyellow;
     color: black;
     border: 1px solid black;
     width: 400px;
     height: 458px;
+    border-radius: 25px;
 }

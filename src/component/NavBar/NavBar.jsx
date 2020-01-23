@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
 
-const NavBar = (props) => {
+const NavBar = props => {
   let nav = props.user ?
     <div>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;

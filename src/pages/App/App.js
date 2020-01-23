@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import Board from '../../component/Board/Board';
 import TextBox from '../../component/TextBox/TextBox';
-import GamePage from '../../component/GamePage/GamePage'
+import GamePage from '../../component/GamePage/GamePage';
+import ClassStats from '../../component/ClassStats/ClassStats';
 import './App.css';
 import { Route, Switch } from 'react-router-dom';
 import SignupPage from '../../pages/SignupPage/SignupPage';
@@ -20,8 +21,24 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
+      ...this.getInitialState(),
       user: userService.getUser()
     };
+  }
+
+  getInitialState() {
+    return {
+      stats: [this.classStats()]
+    }
+  }
+
+  classStats() {
+    return {
+      warrior: [2, 3, 1, 1],
+      mage: [1, 1, 3, 2],
+      archer: [3, 1, 2, 1],
+      theif: [1, 1, 1, 1]
+    }
   }
 
   handleLogout = () => {
@@ -105,9 +122,8 @@ function a11yProps(index) {
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    backgroundColor: theme.palette.background.paper,
     display: 'flex',
-    height: 224,
+    height: 180,
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
@@ -140,7 +156,7 @@ function VerticalTabs({ children }) {
         <Tab label='Shop' {...a11yProps(2)} />
       </Tabs>
       <TabPanel value={value} index={0}>
-        Player Stats
+        <ClassStats />
       </TabPanel>
       <TabPanel value={value} index={1}>
         Inventory Bag
