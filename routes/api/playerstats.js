@@ -4,10 +4,11 @@ const playerStatsCtrl = require('../../controllers/playerstats');
 
 
 router.get('/', playerStatsCtrl.view)
+router.post('/class', playerStatsCtrl.create)
 
 // Protected && Auth
 router.use(require('../../config/auth'));
-router.post('/', checkAuth, playerStatsCtrl.create);
+// router.post('/', checkAuth, playerStatsCtrl.create);
 
 function checkAuth(req, res, next) {
     if (req.user) return next();

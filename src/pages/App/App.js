@@ -28,16 +28,7 @@ export default class App extends Component {
 
   getInitialState() {
     return {
-      stats: [this.classStats()]
-    }
-  }
-
-  classStats() {
-    return {
-      warrior: [2, 3, 1, 1],
-      mage: [1, 1, 3, 2],
-      archer: [3, 1, 2, 1],
-      theif: [1, 1, 1, 1]
+      stats: [null, null, null, null]
     }
   }
 
@@ -90,6 +81,7 @@ render() {
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
+  
 
   return (
   

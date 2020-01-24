@@ -1,4 +1,5 @@
-const Player = require('../models/PlayerStats');
+const PlayerStats = require('../models/PlayerStats');
+const User = require('../models/User')
 
 module.exports = {
     view,
@@ -6,18 +7,38 @@ module.exports = {
 }
 
 async function view(req, res) {
-    
+    const stats = await User.find(req.body.name)
+    console.log('Hello')
+    try {
+        res.status(200).json(stats);
+    } catch {
+        res.status(400).json(err);
+    }
 }
 
-// async function highScores(req, res) {
-//     console.log(req.user)
-//     const scores = await Score.find({})
-//       .sort({numGuesses: 1, seconds: 1})
-//       // Default to a limit of 20 high scores
-//       // if not specified in a query string
-//       .limit(req.query.limit || 20);
-//     res.json(scores);
-//   }
+async function create(req, res) {
+    const warrior = req.body.warrior;
+    const mage = req.body.mage;
+    const archer = req.body.archer;
+    const thief = req.body.thief;
+
+    const classes = new classes({
+        warrior,
+        mage,
+        archer,
+        thief
+    });
+
+    classes.save()
+    try {
+        res.status(200).json(classes);
+        console.log('Class created!', classes);
+    } catch {
+        res.status(400).json(err);
+        console.log('Had trouble making the class...');
+    }
+}
+
 
 
 

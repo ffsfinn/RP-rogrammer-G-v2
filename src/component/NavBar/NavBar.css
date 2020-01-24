@@ -2,11 +2,12 @@
   display: flex;
   justify-content: center;
   margin: 0 0 20px;
+  color: greenyellow;
 }
 
 .NavBar-link {
   margin: 0 10px;
-  color: black;
+  color: greenyellow;
 }
 
 .NavBar-welcome {
