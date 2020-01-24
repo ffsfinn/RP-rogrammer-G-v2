@@ -5,7 +5,6 @@
 3. [User Experience](#ui) 
 4. [Tech](#tech)
 5. [Unresolved issues](#issues)
-6. [Future Enhancements](#stretch)
 ## <a name="desc"></a> **DESCRIPTION**
 ________________
 RP(rogrammer)G v2 is a MERN/CRUD RPG game based off of Unit 1 Project.
@@ -24,7 +23,7 @@ ________________
 * Express
 * React
 * Node
-## <a name="issues"></a> **Unresolved Issues**
+## <a name="issues"></a> **Challenge**
 ________________
 Almost Everything. Challenging to make a FULL STACK game using game logic.
 ________________
