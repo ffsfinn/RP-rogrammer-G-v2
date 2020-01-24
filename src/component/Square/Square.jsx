@@ -2,8 +2,8 @@ import React from 'react'
 
 const Square = props => (
 
-<div class="square">
-    <div class="content"></div>
+<div className="square">
+    <div className="content"></div>
 </div>
 
 )

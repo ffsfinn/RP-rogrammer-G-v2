@@ -1,15 +1,23 @@
 import React, { Component } from 'react';
-import styles from './ClassStats.module.css'
+import userService from '../../utils/userService';
+import styles from './ClassStats.module.css';
 
 export default class ClassStats extends Component {
 
+    constructor() {
+        super();
+        this.state = {
+          user: userService.getUser()
+        };
+      }
+
     handlePlayerClick = props => {
-        let stats = [];
-        
+
+        console.log(this.state.user)
     }
 
-render() {
-    return(
+    render() {
+        return(
 
         <div className={styles.classStats}>
             <button className={styles.classButtons} onClick={this.handlePlayerClick}>Warrior</button>
@@ -17,6 +25,7 @@ render() {
             <button className={styles.classButtons} onClick={this.handlePlayerClick}>Archer</button>
             <button className={styles.classButtons} onClick={this.handlePlayerClick}>Thief</button>
         </div>
+
 
         )
     }

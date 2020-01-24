@@ -3,7 +3,7 @@ import Square from '../Square/Square'
 
 const Squares = props => (
 
-<div class="square-container">
+<div className="square-container">
 
   <Square />
   <Square />

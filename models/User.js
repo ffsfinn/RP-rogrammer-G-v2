@@ -3,14 +3,87 @@ const Schema = mongoose.Schema
 const bcrypt = require('bcrypt');
 const SALT_ROUNDS = 6;
 
+const playerSchema = new mongoose.Schema({
+  warrior: {
+      attack: {
+          type: Number,
+          default: 2
+      },
+      defense: {
+          type: Number,
+          default: 3
+      },
+      spAtk: {
+          type: Number,
+          default: 1
+      },
+      spDef: {
+          type: Number,
+          default: 1
+      },
+  },
+  mage: {
+      attack: {
+          type: Number,
+          default: 1
+      },
+      defense: {
+          type: Number,
+          default: 1
+      },
+      spAtk: {
+          type: Number,
+          default: 3
+      },
+      spDef: {
+          type: Number,
+          default: 2
+      },
+  },
+  archer: {
+      attack: {
+          type: Number,
+          default: 3
+      },
+      defense: {
+          type: Number,
+          default: 1
+      },
+      spAtk: {
+          type: Number,
+          default: 2
+      },
+      spDef: {
+          type: Number,
+          default: 1
+      },
+  },
+  thief: {
+      attack: {
+          type: Number,
+          default: 1
+      },
+      defense: {
+          type: Number,
+          default: 1
+      },
+      spAtk: {
+          type: Number,
+          default: 1
+      },
+      spDef: {
+          type: Number,
+          default: 1
+      },
+  },
+
+})
+
 const userSchema = new mongoose.Schema({
   name: String,
   email: {type: String, required: true, lowercase: true, unique: true},
   password: String,
-  classes: {
-    type: Schema.Types.ObjectId,
-    ref: 'PlayerStats'
-  }
+  class: [playerSchema]
 },
 {
   timestamps: true

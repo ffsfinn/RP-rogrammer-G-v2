@@ -4,7 +4,7 @@ const playerStatsCtrl = require('../../controllers/playerstats');
 
 
 router.get('/', playerStatsCtrl.view)
-router.post('/class', playerStatsCtrl.create)
+router.post('/add', playerStatsCtrl.create)
 
 // Protected && Auth
 router.use(require('../../config/auth'));

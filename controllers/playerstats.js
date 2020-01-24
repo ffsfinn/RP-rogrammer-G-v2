@@ -1,4 +1,3 @@
-const PlayerStats = require('../models/PlayerStats');
 const User = require('../models/User')
 
 module.exports = {
@@ -7,8 +6,8 @@ module.exports = {
 }
 
 async function view(req, res) {
-    const stats = await User.find(req.body.name)
-    console.log('Hello')
+    console.log('Hello', User.find(req.body.class))
+    const stats = await User.find(req.body.class)
     try {
         res.status(200).json(stats);
     } catch {
@@ -17,16 +16,18 @@ async function view(req, res) {
 }
 
 async function create(req, res) {
+    console.log('Route successful')
     const warrior = req.body.warrior;
-    const mage = req.body.mage;
-    const archer = req.body.archer;
-    const thief = req.body.thief;
+    console.log(req.body.warrior);
+    // const mage = req.body.mage;
+    // const archer = req.body.archer;
+    // const thief = req.body.thief;
 
-    const classes = new classes({
+    const classes = new Classes({
         warrior,
-        mage,
-        archer,
-        thief
+        // mage,
+        // archer,
+        // thief
     });
 
     classes.save()
